@@ -14,7 +14,6 @@ const Container = styled.div`
   margin: 0.5rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  font-weight: 550;
   cursor: pointer;
   text-align: center;
 `;

@@ -2,20 +2,40 @@ import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 
-function Section({ imbg, imarrow }) {
+function Section({
+  imbg,
+  title,
+  description,
+  titleBtn1 = "",
+  titleBtn2 = "",
+  imarrow,
+}) {
   return (
-    <Wrap style={{ backgroundImage: `url(${imbg})` }}>
+    <Wrap imbg={imbg}>
       <TextArea>
-        <h1>Model S</h1>
-        <p>Order Online for Touchless Delivery</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </TextArea>
       <Buttons>
         <ButtonContainer>
-          <Button text="Custom Order" />
-          <Button
-            text="Existing Inentory"
-            style={{ backgroundColor: "#171a20cc", color: "white" }}
-          />
+          {titleBtn1 !== "" && (
+            <Button
+              text={titleBtn1}
+              style={{
+                backgroundColor: "#171a20cc",
+                color: "white",
+              }}
+            />
+          )}
+          {titleBtn2 !== "" && (
+            <Button
+              text={titleBtn2}
+              style={{
+                fontWeight: "550",
+                opacity: 0.8,
+              }}
+            />
+          )}
         </ButtonContainer>
         {imarrow ? <DownArrow src={`${imarrow}`} /> : <DownArrow />}
       </Buttons>
@@ -27,7 +47,7 @@ export default Section;
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  //   background-image: url();
+  background-image: ${(props) => `url(${props.imbg})`};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
