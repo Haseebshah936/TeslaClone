@@ -14,14 +14,6 @@ const data = [
   },
   {
     id: 1,
-    title: "Model Y",
-    description: "Order Online for Touchless Delivery",
-    titleBtn1: "Custom order",
-    titleBtn2: "Existing inventory",
-    imbg: "/images/model-y.jpg",
-  },
-  {
-    id: 2,
     title: "Model 3",
     description: "Order Online for Touchless Delivery",
     titleBtn1: "Custom order",
@@ -29,12 +21,20 @@ const data = [
     imbg: "/images/model-3.jpg",
   },
   {
-    id: 3,
+    id: 2,
     title: "Model X",
     description: "Order Online for Touchless Delivery",
     titleBtn1: "Custom order",
     titleBtn2: "Existing inventory",
     imbg: "/images/model-x.jpg",
+  },
+  {
+    id: 3,
+    title: "Model Y",
+    description: "Order Online for Touchless Delivery",
+    titleBtn1: "Custom order",
+    titleBtn2: "Existing inventory",
+    imbg: "/images/model-y.jpg",
   },
   {
     id: 4,

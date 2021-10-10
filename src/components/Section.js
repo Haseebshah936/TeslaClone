@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Fade from "react-reveal/Fade";
 
 function Section({
   imbg,
@@ -11,32 +12,36 @@ function Section({
   imarrow,
 }) {
   return (
-    <Wrap imbg={imbg}>
-      <TextArea>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </TextArea>
+    <Wrap imbg={imbg} id={title}>
+      <Fade bottom>
+        <TextArea>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </TextArea>
+      </Fade>
       <Buttons>
-        <ButtonContainer>
-          {titleBtn1 !== "" && (
-            <Button
-              text={titleBtn1}
-              style={{
-                backgroundColor: "#171a20cc",
-                color: "white",
-              }}
-            />
-          )}
-          {titleBtn2 !== "" && (
-            <Button
-              text={titleBtn2}
-              style={{
-                fontWeight: "550",
-                opacity: 0.8,
-              }}
-            />
-          )}
-        </ButtonContainer>
+        <Fade bottom>
+          <ButtonContainer>
+            {titleBtn1 !== "" && (
+              <Button
+                text={titleBtn1}
+                style={{
+                  backgroundColor: "#171a20cc",
+                  color: "white",
+                }}
+              />
+            )}
+            {titleBtn2 !== "" && (
+              <Button
+                text={titleBtn2}
+                style={{
+                  fontWeight: "550",
+                  opacity: 0.8,
+                }}
+              />
+            )}
+          </ButtonContainer>
+        </Fade>
         {imarrow ? <DownArrow src={`${imarrow}`} /> : <DownArrow />}
       </Buttons>
     </Wrap>
