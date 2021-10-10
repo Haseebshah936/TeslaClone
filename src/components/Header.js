@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import MenuBar from "./MenuBar";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   const [open, setOpen] = useState(false);
@@ -14,9 +15,11 @@ function Header(props) {
   };
   return (
     <Container className="Header">
-      <a href="#Model S">
-        <img src={"/images/logo.svg"} alt="Tesla Logo"></img>
-      </a>
+      <Link to={"/"}>
+        <a href="#">
+          <img src={"/images/logo.svg"} alt="Tesla Logo"></img>
+        </a>
+      </Link>
       <Menu>
         <a href="#Model S">Model&nbsp;S</a>
         <a href="#Model 3">Model&nbsp;3</a>

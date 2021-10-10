@@ -5,15 +5,17 @@ import "./App.css";
 import { store } from "./app/store";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import { Route } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <Router>
         <Header />
-        <Home />
-      </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </Router>
     </Provider>
   );
 }

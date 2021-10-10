@@ -2,52 +2,51 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector } from "react-redux";
 
-const data = [
-  {
-    id: 0,
-    title: "Model S",
-  },
-  {
-    id: 1,
-    title: "Model 3",
-  },
-  {
-    id: 2,
-    title: "Model X",
-  },
-  {
-    id: 3,
-    title: "Model Y",
-  },
-  {
-    id: 4,
-    title: "Lowest Cost Solar Panels in America",
-  },
-  {
-    id: 5,
-    title: "Solar for New Roofs",
-  },
-  {
-    id: 6,
-    title: "Accessories",
-  },
-  {
-    id: 7,
-    title: "Cybertruck",
-  },
-  {
-    id: 8,
-    title: "Existing Inventory",
-  },
-  {
-    id: 9,
-    title: "Utilities",
-  },
-];
+// const data = [
+//   {
+//     id: 0,
+//     title: "Model S",
+//   },
+//   {
+//     id: 1,
+//     title: "Model 3",
+//   },
+//   {
+//     id: 2,
+//     title: "Model X",
+//   },
+//   {
+//     id: 3,
+//     title: "Model Y",
+//   },
+//   {
+//     id: 4,
+//     title: "Lowest Cost Solar Panels in America",
+//   },
+//   {
+//     id: 5,
+//     title: "Solar for New Roofs",
+//   },
+//   {
+//     id: 6,
+//     title: "Accessories",
+//   },
+//   {
+//     id: 7,
+//     title: "Cybertruck",
+//   },
+//   {
+//     id: 8,
+//     title: "Existing Inventory",
+//   },
+//   {
+//     id: 9,
+//     title: "Utilities",
+//   },
+// ];
 
 function MenuBar({ onClick = () => {}, state = false }) {
-  const car = useSelector((state) => state.reducer);
-  console.log(car);
+  const data = useSelector((state) => state.reducer);
   return (
     <BurgerNav display={state}>
       <CustomMenuClose>
@@ -56,7 +55,7 @@ function MenuBar({ onClick = () => {}, state = false }) {
           style={{ fontSize: 25, cursor: "pointer" }}
         />
       </CustomMenuClose>
-      {data.map(({ id, title }) => (
+      {data.cars.map(({ id, title }) => (
         <li key={id}>
           <a href={`#${title}`}>{title}</a>
         </li>
