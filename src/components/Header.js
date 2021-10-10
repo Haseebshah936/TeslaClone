@@ -16,9 +16,7 @@ function Header(props) {
   return (
     <Container className="Header">
       <Link to={"/"}>
-        <a href="#">
-          <img src={"/images/logo.svg"} alt="Tesla Logo"></img>
-        </a>
+        <img src={"/images/logo.svg"} alt="Tesla Logo"></img>
       </Link>
       <Menu>
         <a href="#Model S">Model&nbsp;S</a>
